@@ -59,10 +59,14 @@ def encoding(name):
 			print("open > '"+name+str(i)+".jpg'")
 
 
-def decoe(file): 	
-	d = decode(Image.open(file))
+def decoe(name, n): 	
+	string = "";
+
+	for i in range(0,int(n)): 
+
+		d = decode(Image.open(name+str(i)+".jpg")); 
+		string += d[0].data.decode("ascii");  
 	
-	string = d[0].data.decode("ascii");  
 	string = list(string); sub_string=[]; rstring = []
 	for i in range(0,int(len(string)/8)): 
 		for j in range(0,8): 
@@ -75,4 +79,4 @@ def decoe(file):
 if sys.argv[1] == "-e":
 	encoding(sys.argv[2])
 elif sys.argv[1] == "-d": 
-	decoe(sys.argv[2])
+	decoe(sys.argv[2], sys.argv[3])
