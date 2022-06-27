@@ -1,5 +1,4 @@
 # qrcode-storage
----
 
 > ## 📖 OverView
 
@@ -7,21 +6,17 @@ Utilizzando questo semplice programma sei in grado di stivare i dati di un gener
 
 Funziona trasformando i char in numeri ASCII e poi li trasforma in sequenze binarie. 
 
+
 > ## 🔧 How do this func? 
 
-To encrypt some file type this: 
+To **encrypt** some file type this: 
 
-‘‘‘ 
 	
 	python3 qr-gen.py -e "patch file"
 
-‘‘‘
 
-instead to decrypt: 
+instead to **decrypt**: 
 
-
-	
 	python3 qr-gen.py -d "patch file"
 
 
-	
