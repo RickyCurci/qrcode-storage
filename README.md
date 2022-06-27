@@ -11,15 +11,31 @@ I qrcode generati saranno salvati nella cartella **/src** con il nome del file e
 Saranno anche caricati all'interno dell'file: **index.html** nella main directory. Li potrete stamparli come un nastro o visionarli sul cellure lanciando un web server con il comando 
 	
 	python3 -m http.server 8016
-
+<br>
 
 > ## 🔧 How do this func? 
+
+Read this section to install the system and how to use. <br>
+
+>> installation
+
+1. clone the repository: 
+	git clone https://github.com/rickycurci/qrcode-storage.git
+
+2. move the the correct folder 
+	cd qrcode-storage
+
+3. install the dependecies (pyzbar, pillow): 
+	pip3 install -r requirements.txt 
+
+4. install zbar, the shared library (on MacOS):
+	brew install zbar
+  
 
 >> basic command 
 
 To **encrypt** some file type this: 
 
-				
 	python3 qr-gen.py -e "patch file"
 
 
