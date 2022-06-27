@@ -11,7 +11,7 @@ Funziona trasformando i char in numeri ASCII e poi li trasforma in sequenze bina
 
 To encrypt some file type this: 
 
-‘‘‘ python 
+‘‘‘ 
 	
 	python3 qr-gen.py -e "patch file"
 
@@ -19,8 +19,9 @@ To encrypt some file type this:
 
 instead to decrypt: 
 
-‘‘‘ python 
+
 	
 	python3 qr-gen.py -d "patch file"
 
-‘‘‘
+
+	
