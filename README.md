@@ -6,12 +6,20 @@ Utilizzando questo semplice programma sei in grado di stivare i dati di un gener
 
 Funziona trasformando i char in numeri ASCII e poi li trasforma in sequenze binarie. 
 
+I qrcode generati saranno salvati nella cartella **/src** con il nome del file e con i numerini. 
+
+Saranno anche caricati all'interno dell'file: **index.html** nella main directory. Li potrete stamparli come un nastro o visionarli sul cellure lanciando un web server con il comando 
+	
+	python3 -m http.server 8016
+
 
 > ## 🔧 How do this func? 
 
+>> basic command 
+
 To **encrypt** some file type this: 
 
-	
+				
 	python3 qr-gen.py -e "patch file"
 
 
