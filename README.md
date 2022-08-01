@@ -23,13 +23,9 @@ clone the repository:
 
 	git clone https://github.com/rickycurci/qrcode-storage.git
 
-move the the correct folder 
+run this .sh file 
 
-	cd qrcode-storage
-
-install the dependecies (pyzbar, pillow): 
-	
-	pip3 install -r requirements.txt 
+	./installation.py
 
 install zbar, the shared library (on MacOS):
 	

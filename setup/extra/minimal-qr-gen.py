@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-from pyzbar.pyzbar import decode
 from PIL import Image
 import qrcode
 import sys
@@ -9,7 +8,7 @@ import os
 
 
 def encoding(name): 
-	f = name; f = open(f,"r"); string = ""	
+	os.system("mkdir src/"+name); f = name; f = open(f,"r"); string = ""	
 	for i in f: 
 		string = string+"\n"+i
 	ASCII_values = []; values = []; value = []
@@ -38,7 +37,7 @@ def encoding(name):
 		)
 
 		img = qr.make_image(qr.add_data(string))
-		img.save(name+".jpg"); os.system("mv "+name+".jpg"+" src/")
+		img.save(name+".jpg"); os.system("mv "+name+".jpg"+" src/"+name+"/")
 
 		print("open > '"+name+".jpg'")
 
@@ -54,8 +53,8 @@ def encoding(name):
 					version=40,
 					error_correction=qrcode.constants.ERROR_CORRECT_L,
 			)
-			img = qr.make_image(qr.add_data(nstring[point:(point+2960)])); point += 2960
-			img.save(name+str(i)+".jpg"); os.system("mv "+name+str(i)+".jpg"+" src/")
+			img = qr.make_image(qr.add_data(nstring[point:(point+2960)])); point += 2960		
+			img.save(name+str(i)+".jpg"); os.system("mv "+name+str(i)+".jpg"+" src/"+name+"/")
 			print("open > '"+name+str(i)+".jpg'")
 
 
@@ -76,13 +75,17 @@ def decoe(name, n):
 
 def indexGen(name): 
 	f = open("src/index.html","r"); old = f.read(); w = old
-	patch = os.listdir("src/"); patch.remove(patch[0])
+	patch = os.listdir("src/"+name+"/"); patch.remove(patch[0])
 	for i in patch: 
 		w = w+"\n"+'	<img src="'+i+'">'
-	w = w+"\n</body>\n</html>"; f = open("src/index.html","w"); f.write(w)
+	w = w+"\n</body>\n</html>"; f = open("src/"+name+"/index.html","w"); f.write(w)
+	
 
 
 if sys.argv[1] == "-e":
 	encoding(sys.argv[2]); indexGen(sys.argv[2])
 elif sys.argv[1] == "-d": 
 	decoe(sys.argv[2], sys.argv[3])
+
+
+
