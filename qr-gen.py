@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from pyzbar.pyzbar import decode
+#from pyzbar.pyzbar import decode
 from PIL import Image
 import qrcode
 import sys
@@ -74,9 +74,15 @@ def decoe(name, n):
 		rstring.append(int("".join(sub_string),2)); sub_string = []
 	print(''.join(chr(i) for i in rstring))
 
+def indexGen(name): 
+	f = open("src/index.html","r"); old = f.read(); w = old
+	patch = os.listdir("src/"); patch.remove(patch[0])
+	for i in patch: 
+		w = w+"\n"+'	<img src="'+i+'">'
+	w = w+"\n</body>\n</html>"; f = open("src/index.html","w"); f.write(w)
 
 
 if sys.argv[1] == "-e":
-	encoding(sys.argv[2])
+	encoding(sys.argv[2]); indexGen(sys.argv[2])
 elif sys.argv[1] == "-d": 
 	decoe(sys.argv[2], sys.argv[3])
